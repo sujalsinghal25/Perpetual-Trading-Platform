@@ -32,6 +32,7 @@ export class Engine {
     if (this.instance) return this.instance
 
     const engine = new Engine()
+<<<<<<< HEAD
     try {
       const snapshot = await S3Manager.downloadSnapshot(ENGINE_KEY!)
       if (snapshot) {
@@ -58,6 +59,35 @@ export class Engine {
     }
     setInterval(() => {
       engine.saveSnapshot()
+=======
+    // try {
+    //   const snapshot = await S3Manager.downloadSnapshot(ENGINE_KEY!)
+    //   if (snapshot) {
+    //     const snapBook = snapshot.orderbook
+    //     engine.orderbook = new Orderbook(snapBook.bids, snapBook.asks, snapBook.market)
+    //     if (snapshot.userPosition) {
+    //       for(const [userId, position] of snapshot.userPosition) {
+    //         engine.userPosition.set(userId, position)
+    //       }
+    //     }
+    //     if (snapshot.userBalance) {
+    //       for(const [userId, balance] of snapshot.userBalance) {
+    //         engine.userBalance.set(userId, balance)
+    //       }
+    //     }
+    //   } else {
+    //     engine.orderbook = new Orderbook([], [], "BTCUSDT")
+    //   }
+
+    // } catch (error) {
+    //   console.log("Engine creation failed: ", error)
+    //   Engine.instance = null
+    //   throw error
+    // }
+    engine.orderbook = new Orderbook([], [], "BTCUSDT")
+    setInterval(() => {
+      // engine.saveSnapshot()
+>>>>>>> 704b508f11aef1fe855a155609818d454fb3d778
     }, 3000);
     return engine
   }
@@ -79,12 +109,21 @@ export class Engine {
   }
 
   private async saveSnapshot () {
+<<<<<<< HEAD
     const snapshot = {
       orderbook: this.orderbook?.getSnapshot(),
       userPosition: Array.from(this.userPosition.entries()),
       userBalance: Array.from(this.userBalance.entries())
     }
     await S3Manager.uploadSnapshot(snapshot, ENGINE_KEY!)
+=======
+    // const snapshot = {
+    //   orderbook: this.orderbook?.getSnapshot(),
+    //   userPosition: Array.from(this.userPosition.entries()),
+    //   userBalance: Array.from(this.userBalance.entries())
+    // }
+    // await S3Manager.uploadSnapshot(snapshot, ENGINE_KEY!)
+>>>>>>> 704b508f11aef1fe855a155609818d454fb3d778
   }
 
   processOrder(order: Order) {

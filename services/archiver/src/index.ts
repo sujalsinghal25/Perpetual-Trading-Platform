@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 import { Worker } from "bullmq"
 import prisma from "@repo/db/client";
 import dotenv from "dotenv";
 
 dotenv.config();  
+=======
+import dotenv from "dotenv";
+
+dotenv.config();
+
+import { Worker } from "bullmq"
+import prisma from "@repo/db/client";  
+>>>>>>> 704b508f11aef1fe855a155609818d454fb3d778
 
 ;(async () => {
   if (!process.env.REDIS_HOST || !process.env.REDIS_PORT) {

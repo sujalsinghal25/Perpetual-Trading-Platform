@@ -1,5 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
+<<<<<<< HEAD
+=======
+  "concurrency": "12",
+>>>>>>> 704b508f11aef1fe855a155609818d454fb3d778
   "ui": "tui",
   "tasks": {
     "build": {
@@ -15,7 +19,12 @@
     },
     "dev": {
       "cache": false,
+<<<<<<< HEAD
       "persistent": true
+=======
+      "persistent": true,
+      "inputs": ["$TURBO_DEFAULT$", ".env*"]
+>>>>>>> 704b508f11aef1fe855a155609818d454fb3d778
     }
   }
 }
