@@ -26,13 +26,17 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=sujalsinghal25_Perpetual-Trading-Platform
+            -Dsonar.organization=sujalsinghal25
 
   snyk-scan:
     name: Snyk Security Scan
