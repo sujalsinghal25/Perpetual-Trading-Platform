@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "dev": "tsx watch src/index.ts",
-=======
     "dev": "tsx --watch --env-file=../../.env src/index.ts",
->>>>>>> 704b508f11aef1fe855a155609818d454fb3d778
     "start": "node dist/index.js",
     "build": "tsc -b"
   },

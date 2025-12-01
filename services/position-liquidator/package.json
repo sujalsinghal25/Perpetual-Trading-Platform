@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-<<<<<<< HEAD
-    "dev": "tsx src/index.ts",
-=======
     "dev": "tsx --env-file=../../.env src/index.ts",
->>>>>>> 704b508f11aef1fe855a155609818d454fb3d778
     "build": "tsc -b"
   },
   "keywords": [],
